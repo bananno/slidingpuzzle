@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+*::selection {
+  background-color: transparent;
+}
+
 body {
   padding: 30px;
 }
@@ -35,10 +39,6 @@ p {
 
 .toolButton:hover {
   background-color: #ccc;
-}
-
-.toolButton::selection {
-  background-color: transparent;
 }
 
 #boardBox {
