@@ -13,12 +13,13 @@ document.onkeydown = useKeyboard;
 
 // INITIATE
 
-newGame();
+window.onload = function() {
+    newGame();
+};
 
 // FUNCTIONS
 
 function newGame() {
-
     boardSize.x = parseInt(inputBoardSizeX.value);
     boardSize.y = parseInt(inputBoardSizeY.value);
 
