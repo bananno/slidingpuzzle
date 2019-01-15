@@ -14,11 +14,11 @@
         <div id="toolBoardSizes">
             <div>
                 width<br>
-                <input id="inputBoardSizeY" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                <input id="inputBoardSizeY" onkeypress="return keyEventIsInteger(event)">
             </div>
             <div>
                 height<br>
-                <input id="inputBoardSizeX" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                <input id="inputBoardSizeX" onkeypress="return keyEventIsInteger(event)">
             </div>
         </div>
 
