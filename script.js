@@ -9,6 +9,10 @@ var boardSize = {},
   },
   moves = 0;
 
+const defaultBoardSize = 5;
+const minBoardSize = 2;
+const maxBoardSize = 10;
+
 document.onkeydown = useKeyboard;
 
 // INITIATE
@@ -20,18 +24,7 @@ window.onload = function() {
 // FUNCTIONS
 
 function newGame() {
-  boardSize.x = parseInt(inputBoardSizeX.value);
-  boardSize.y = parseInt(inputBoardSizeY.value);
-
-  // Below: probably can't happen now, due to event return
-  if(isNaN(boardSize.x)) boardSize.x = 5;
-  if(isNaN(boardSize.y)) boardSize.y = 5;
-
-  if(boardSize.x <= 1) boardSize.x = 2;
-  if(boardSize.y <= 1) boardSize.y = 2;
-
-  if(boardSize.x > 10) boardSize.x = 10;
-  if(boardSize.y > 10) boardSize.y = 10;
+  boardSize = getBoardSizeInputs();
 
   inputBoardSizeY.value = boardSize.y;
   inputBoardSizeX.value = boardSize.x;
@@ -40,6 +33,29 @@ function newGame() {
   movesBox.innerHTML = moves;
 
   solveBoard();
+}
+
+function getBoardSizeInputs() {
+  let newBoardSize = {};
+
+  newBoardSize.x = parseInt(inputBoardSizeX.value);
+  newBoardSize.y = parseInt(inputBoardSizeY.value);
+
+  ['x', 'y'].forEach((coord, i) => {
+    if (isNaN(newBoardSize[coord])) {
+      newBoardSize[coord] = defaultBoardSize;
+    }
+
+    if (newBoardSize[coord] < minBoardSize) {
+      newBoardSize[coord] = minBoardSize;
+    }
+
+    if (newBoardSize[coord] > maxBoardSize) {
+      newBoardSize[coord] = maxBoardSize;
+    }
+  });
+
+  return newBoardSize;
 }
 
 function solveBoard() {
