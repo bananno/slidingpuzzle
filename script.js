@@ -37,7 +37,7 @@ function newGame() {
     inputBoardSizeX.value = boardSize.x;
 
     moves = 0;
-    movesBox.value = moves;
+    movesBox.innerHTML = moves;
 
     solveBoard();
 }
@@ -83,7 +83,7 @@ function shuffle() {
         }
     }
     moves = 0;
-    movesBox.value = moves;
+    movesBox.innerHTML = moves;
 }
 
 function useKeyboard(keyPressed) {
@@ -206,7 +206,7 @@ function swapTiles(x, y) {
     newEmpty.innerHTML = "";
 
     moves ++;
-    movesBox.value = moves;
+    movesBox.innerHTML = moves;
 
     checkSolved();
 }
