@@ -14,6 +14,8 @@ const defaultBoardSize = 5;
 const minBoardSize = 2;
 const maxBoardSize = 10;
 
+const winningCharacter = '&#9786;';
+
 document.onkeydown = useKeyboard;
 
 // INITIATE
@@ -236,14 +238,16 @@ function swapTiles(x, y) {
   newEmpty.innerHTML = "";
 
   incrementMoveCount();
-  checkSolved();
+  checkIfBoardIsSolved();
 }
 
-function checkSolved() {
-  for(var num=1; num<(boardSize.x * boardSize.y); num++) {
-    if(("" + num + "") != document.getElementById("cell_" + num).innerHTML) {
+function checkIfBoardIsSolved() {
+  let numberOfCells = boardSize.x * boardSize.y;
+  for (let num = 1; num < numberOfCells; num++) {
+    let cellNum = document.getElementById('cell_' + num).innerHTML;
+    if ('' + num != cellNum) {
       return;
     }
   }
-  document.getElementById("cell_" + (boardSize.x * boardSize.y)).innerHTML = "&#9786;";
+  document.getElementById('cell_' + numberOfCells).innerHTML = winningCharacter;
 }
