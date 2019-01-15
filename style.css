@@ -1,53 +1,60 @@
 body, table, td {
-    font-family: "Calibri"
+  font-family: "Calibri"
 }
 
 .toolButton {
-    padding:5px;
-    cursor:pointer;
-    text-align:center;
-    background-color:#ddd;
-    border-radius:5px;
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #ddd;
+  border-radius: 5px;
 }
+
 .toolButton:hover {
-    background-color:#ccc;
+  background-color: #ccc;
 }
+
 .toolButton::selection {
-    background-color:transparent;
+  background-color: transparent;
 }
 
 #boardBox {
-    padding-left:10px;
+  padding-left: 10px;
 }
+
 #inputBoardSizeX, #inputBoardSizeY {
-    width:42px;
+  width: 42px;
 }
+
 #movesBox {
-    width:50px;
-    cursor:default;
+  width: 50px;
+  cursor: default;
 }
+
 input {
-    height:30px;
-    font-size:15px;
-    border-radius:3px;
-    text-align:center;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 3px;
+  text-align: center;
 }
+
 #boardFrame {
-    border-radius:10px;
-    background-color:#555;
-    padding:5px;
+  border-radius: 10px;
+  background-color: #555;
+  padding: 5px;
 }
 
 .boardCell {
-    width:50px;
-    height:50px;
-    border-radius:5px;
-    text-align:center;
-    font-size:30px;
-    cursor:pointer;
-    background-color:white;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: white;
 }
+
 .boardCell.empty {
-    background-color:#aaa;
-    cursor:default;
+  background-color: #aaa;
+  cursor: default;
 }
