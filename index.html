@@ -9,84 +9,83 @@
     <h1>Sliding Puzzle</h1>
 
     <div id="toolBox">
-                <table width="120">
-                    <tr>
-                        <td align="center">
-                            <table>
-                                <tr>
-                                    <td align="center">
-                                        width
-                                    </td>
-                                    <td width=5>
-                                    </td>
-                                    <td align="center">
-                                        height
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input id="inputBoardSizeY" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                    </td>
-                                    <td>
-                                    </td>
-                                    <td>
-                                        <input id="inputBoardSizeX" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height=10>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="toolButton" onClick="newGame()">
-                            <u>n</u>ew game
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height=10>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="toolButton" onClick="shuffle()">
-                            <u>s</u>huffle
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height=10>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="toolButton" onClick="solveBoard()">
-                            <u>f</u>inish
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <br>
-                            <table>
-                                <tr>
-                                    <td>
-                                        moves:
-                                    </td>
-                                    <td width=5>
-                                    </td>
-                                    <td>
-                                        <input id="movesBox" onfocus="document.activeElement.blur();">
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">
-                            <br><i>Click the tiles or use the arrow keys to move.</i>
-                        </td>
-                    </tr>
-                </table>
-            </td>
+        <table width="120">
+            <tr>
+                <td align="center">
+                    <table>
+                        <tr>
+                            <td align="center">
+                                width
+                            </td>
+                            <td width=5>
+                            </td>
+                            <td align="center">
+                                height
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="inputBoardSizeY" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                <input id="inputBoardSizeX" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td height=10>
+                </td>
+            </tr>
+            <tr>
+                <td class="toolButton" onClick="newGame()">
+                    <u>n</u>ew game
+                </td>
+            </tr>
+            <tr>
+                <td height=10>
+                </td>
+            </tr>
+            <tr>
+                <td class="toolButton" onClick="shuffle()">
+                    <u>s</u>huffle
+                </td>
+            </tr>
+            <tr>
+                <td height=10>
+                </td>
+            </tr>
+            <tr>
+                <td class="toolButton" onClick="solveBoard()">
+                    <u>f</u>inish
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>
+                                moves:
+                            </td>
+                            <td width=5>
+                            </td>
+                            <td>
+                                <input id="movesBox" onfocus="document.activeElement.blur();">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <br><i>Click the tiles or use the arrow keys to move.</i>
+                </td>
+            </tr>
+        </table>
     </div>
     <div id="boardBox"></div>
 </body>
