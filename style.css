@@ -14,6 +14,12 @@ h1 {
   font-family: "Arial Black", Arial, sans-serif;
 }
 
+#toolBox, #boardBox {
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 30px;
+}
+
 .toolButton {
   padding: 5px;
   cursor: pointer;
