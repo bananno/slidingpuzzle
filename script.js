@@ -6,8 +6,9 @@ var boardSize = {},
   numReference = {
     numToArr:[],
     x:[]
-  },
-  moves = 0;
+  };
+
+let moveCount = 0;
 
 const defaultBoardSize = 5;
 const minBoardSize = 2;
@@ -29,9 +30,7 @@ function newGame() {
   inputBoardSizeY.value = boardSize.y;
   inputBoardSizeX.value = boardSize.x;
 
-  moves = 0;
-  movesBox.innerHTML = moves;
-
+  resetMoveCount();
   solveBoard();
 }
 
@@ -98,6 +97,11 @@ function shuffleBoard() {
     let tileX = boardSize.x;
     let tileY = boardSize.y;
 
+    let tile1 = {
+      x: getRandomNumber(tileX),
+      y: getRandomNumber(tileY)
+    };
+
     if (direction) {
       tileX = getRandomNumber(tileX);
     } else {
@@ -109,8 +113,7 @@ function shuffleBoard() {
     direction = !direction;
   }
 
-  moves = 0;
-  movesBox.innerHTML = moves;
+  resetMoveCount();
 }
 
 function useKeyboard(keyPressed) {
@@ -232,9 +235,7 @@ function swapTiles(x, y) {
   oldEmpty.innerHTML = newEmpty.innerHTML;
   newEmpty.innerHTML = "";
 
-  moves ++;
-  movesBox.innerHTML = moves;
-
+  incrementMoveCount();
   checkSolved();
 }
 
