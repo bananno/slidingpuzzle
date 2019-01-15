@@ -14,6 +14,10 @@ h1 {
   font-family: "Arial Black", Arial, sans-serif;
 }
 
+p {
+  margin-top: 30px;
+}
+
 #toolBox, #boardBox {
   display: inline-block;
   vertical-align: text-top;
