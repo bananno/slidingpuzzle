@@ -10,34 +10,16 @@
     <h1>Sliding Puzzle</h1>
 
     <div id="toolBox">
-        <table width="120">
-            <tr>
-                <td align="center">
-                    <table>
-                        <tr>
-                            <td align="center">
-                                width
-                            </td>
-                            <td width=5>
-                            </td>
-                            <td align="center">
-                                height
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input id="inputBoardSizeY" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <input id="inputBoardSizeX" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+        <div id="toolBoardSizes">
+            <div>
+                width<br>
+                <input id="inputBoardSizeY" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            </div>
+            <div>
+                height<br>
+                <input id="inputBoardSizeX" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            </div>
+        </div>
 
         <div class="toolButton" onClick="newGame()">
             <u>n</u>ew game

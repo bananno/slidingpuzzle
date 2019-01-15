@@ -28,6 +28,13 @@ p {
   margin-right: 30px;
 }
 
+#toolBoardSizes div {
+  display: inline-block;
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 .toolButton {
   padding: 5px;
   cursor: pointer;
