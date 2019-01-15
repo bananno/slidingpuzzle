@@ -6,31 +6,90 @@
     <script src="script.js"></script>
 </head>
 <body>
-
-<table>
-    <td id="toolBox" width=120 valign="top">
-        <table width=120>
-            <tr><td align="center">
-                <table>
-                    <tr><td align="center">width<td width=5><td align="center">height
-                    <tr><td><input id="inputBoardSizeY" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                    <td><td><input id="inputBoardSizeX" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+    <table>
+        <tr>
+            <td id="toolBox" width="120" valign="top">
+                <table width="120">
+                    <tr>
+                        <td align="center">
+                            <table>
+                                <tr>
+                                    <td align="center">
+                                        width
+                                    </td>
+                                    <td width=5>
+                                    </td>
+                                    <td align="center">
+                                        height
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input id="inputBoardSizeY" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <input id="inputBoardSizeX" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height=10>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="toolButton" onClick="newGame()">
+                            <u>n</u>ew game
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height=10>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="toolButton" onClick="shuffle()">
+                            <u>s</u>huffle
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height=10>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="toolButton" onClick="solveBoard()">
+                            <u>f</u>inish
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br>
+                            <table>
+                                <tr>
+                                    <td>
+                                        moves:
+                                    </td>
+                                    <td width=5>
+                                    </td>
+                                    <td>
+                                        <input id="movesBox" onfocus="document.activeElement.blur();">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <br><i>Click the tiles or use the arrow keys to move.</i>
+                        </td>
+                    </tr>
                 </table>
-            <tr><td height=10>
-            <tr><td class="toolButton" onClick="newGame()"><u>n</u>ew game
-            <tr><td height=10>
-            <tr><td class="toolButton" onClick="shuffle()"><u>s</u>huffle
-            <tr><td height=10>
-            <tr><td class="toolButton" onClick="solveBoard()"><u>f</u>inish
-            <tr><td>
-                <br>
-                <table>
-                    <td>moves:<td width=5><td><input id="movesBox" onfocus="document.activeElement.blur();">
-                </table>
-            <tr><td align="center"><br><i>Click the tiles or use the arrow keys to move.</i>
-        </table>
-    <td id="boardBox" valign="top">
-</table>
-
+            </td>
+            <td id="boardBox" valign="top">
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
