@@ -90,14 +90,25 @@ function solveBoard() {
   document.getElementById("boardBox").innerHTML = s;
 }
 
-function shuffle() {
-  for(var count = 1; count <= (boardSize.x * boardSize.y * 5); count ++) {
-    if((count%2) == 0) {
-      slideTile((Math.floor(Math.random() * boardSize.x) + 1), emptySpace.y);
+function shuffleBoard() {
+  let numShuffles = boardSize.x * boardSize.y * 5;
+  let direction = true;
+
+  for (let count = 1; count <= numShuffles; count++) {
+    let tileX = boardSize.x;
+    let tileY = boardSize.y;
+
+    if (direction) {
+      tileX = getRandomNumber(tileX);
     } else {
-      slideTile(emptySpace.x, (Math.floor(Math.random() * boardSize.y) + 1));
+      tileY = getRandomNumber(tileY);
     }
+
+    slideTile(tileX, tileY);
+
+    direction = !direction;
   }
+
   moves = 0;
   movesBox.innerHTML = moves;
 }
@@ -128,7 +139,7 @@ function useKeyboard(keyPressed) {
   }
 
   if(keyPressed == 83) { // "s"
-    shuffle();
+    shuffleBoard();
     return;
   }
 
