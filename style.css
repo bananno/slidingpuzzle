@@ -30,6 +30,7 @@ p {
   text-align: center;
   background-color: #ddd;
   border-radius: 5px;
+  margin-top: 10px;
 }
 
 .toolButton:hover {
