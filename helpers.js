@@ -16,3 +16,7 @@ function resetMoveCount() {
   moves = 0;
   movesBox.innerHTML = moves;
 }
+
+function selectCell(num) {
+  return document.getElementById('cell_' + num);
+}

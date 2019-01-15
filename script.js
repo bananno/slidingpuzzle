@@ -222,8 +222,8 @@ function slideTile(inputX, inputY) {
 
 function swapTiles(x, y) {
 
-  var newEmpty = document.getElementById("cell_" + numReference[x][y]),
-    oldEmpty = document.getElementById("cell_" + emptySpace.total);
+  var newEmpty = selectCell(numReference[x][y]),
+    oldEmpty = selectCell(emptySpace.total);
 
   emptySpace = {
     x: x,
@@ -244,10 +244,10 @@ function swapTiles(x, y) {
 function checkIfBoardIsSolved() {
   let numberOfCells = boardSize.x * boardSize.y;
   for (let num = 1; num < numberOfCells; num++) {
-    let cellNum = document.getElementById('cell_' + num).innerHTML;
+    let cellNum = selectCell(num).innerHTML;
     if ('' + num != cellNum) {
       return;
     }
   }
-  document.getElementById('cell_' + numberOfCells).innerHTML = winningCharacter;
+  selectCell(numberOfCells).innerHTML = winningCharacter;
 }
