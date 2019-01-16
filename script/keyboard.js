@@ -1,6 +1,4 @@
 
-document.onkeydown = useKeyboard;
-
 const keyboardRun = {
   enter: keyboardPressEnter,
   n: newGame,
@@ -8,13 +6,13 @@ const keyboardRun = {
   f: solveBoard,
   h: () => { focusOnElement('inputBoardSizeX'); },
   w: () => { focusOnElement('inputBoardSizeY'); },
-  arrowleft: () => { keyboardPressArrowKey('left'); },
-  arrowup: () => { keyboardPressArrowKey('up'); },
-  arrowright: () => { keyboardPressArrowKey('right'); },
-  arrowdown: () => { keyboardPressArrowKey('down'); }
+  arrowleft: () => { keyboardPressArrowKey(emptySpace.y < boardSize.y, 0, 1); },
+  arrowup: () => { keyboardPressArrowKey(emptySpace.x < boardSize.x, 1, 0); },
+  arrowright: () => { keyboardPressArrowKey(emptySpace.y > 1, 0, -1); },
+  arrowdown: () => { keyboardPressArrowKey(emptySpace.x > 1, -1, 0); }
 };
 
-function useKeyboard(e) {
+document.onkeydown = (e) => {
   const keyName = (window.event || e).key.toLowerCase();
 
   if (keyboardRun[keyName]) {
@@ -31,22 +29,8 @@ function keyboardPressEnter() {
   }
 }
 
-function keyboardPressArrowKey(direction) {
-  if (direction == 'left') {
-    if (emptySpace.y < boardSize.y) {
-      swapTiles(emptySpace.x, emptySpace.y + 1)
-    }
-  } else if (direction == 'up') {
-    if (emptySpace.x < boardSize.x) {
-      swapTiles(emptySpace.x + 1, emptySpace.y)
-    }
-  } else if (direction == 'right') {
-    if (emptySpace.y > 1) {
-      swapTiles(emptySpace.x , emptySpace.y - 1)
-    }
-  } else if (direction == 'down') {
-    if (emptySpace.x > 1) {
-      swapTiles(emptySpace.x - 1, emptySpace.y)
-    }
+function keyboardPressArrowKey(condition, changeX, changeY) {
+  if (condition) {
+    swapTiles(emptySpace.x + changeX, emptySpace.y + changeY);
   }
 }
