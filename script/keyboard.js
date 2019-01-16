@@ -1,8 +1,8 @@
 
 document.onkeydown = useKeyboard;
 
-function useKeyboard(keyPressed) {
-  let keyPressed = (window.event ? window.event : keyPressed).keyCode;
+function useKeyboard(e) {
+  const keyPressed = (window.event || e).keyCode;
 
   // Enter:
 
