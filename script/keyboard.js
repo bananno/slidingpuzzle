@@ -1,17 +1,15 @@
 
 document.onkeydown = useKeyboard;
 
+const keyboardRun = {
+  enter: keyboardPressEnter
+};
+
 function useKeyboard(e) {
   const keyName = (window.event || e).key.toLowerCase();
 
-  if (keyName == 'enter') {
-    let focusElement = document.activeElement.id;
-
-    if (focusElement == 'inputBoardSizeX' || focusElement == 'inputBoardSizeY') {
-      newGame();
-      document.activeElement.blur();
-    }
-
+  if (keyboardRun[keyName]) {
+    keyboardRun[keyName]();
     return;
   }
 
@@ -66,5 +64,14 @@ function useKeyboard(e) {
       swapTiles(emptySpace.x - 1, emptySpace.y)
     }
     return;
+  }
+}
+
+function keyboardPressEnter() {
+  let focusElement = document.activeElement.id;
+
+  if (focusElement == 'inputBoardSizeX' || focusElement == 'inputBoardSizeY') {
+    newGame();
+    document.activeElement.blur();
   }
 }
