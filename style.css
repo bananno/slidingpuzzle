@@ -24,6 +24,10 @@ p {
   margin-top: 30px;
 }
 
+a {
+  text-decoration: none;
+}
+
 #toolBox, #boardBox {
   display: inline-block;
   vertical-align: text-top;
@@ -107,4 +111,12 @@ p {
 .boardCell.empty {
   background-color: #aaa;
   cursor: default;
+}
+
+#githublogo1 {
+  height: 25px;
+}
+
+#githublogo2 {
+  height: 20px;
 }
