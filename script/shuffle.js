@@ -4,16 +4,11 @@ function shuffleBoard() {
   let direction = true;
 
   for (let count = 1; count <= numShuffles; count++) {
-    let tileX = boardSize.x;
-    let tileY = boardSize.y;
-
     if (direction) {
-      tileX = getRandomNumber(tileX);
+      slideTile(getRandomNumber(boardSize.x), emptySpace.y);
     } else {
-      tileY = getRandomNumber(tileY);
+      slideTile(emptySpace.x, getRandomNumber(boardSize.y));
     }
-
-    slideTile(tileX, tileY);
 
     direction = !direction;
   }
