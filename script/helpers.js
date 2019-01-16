@@ -28,3 +28,9 @@ function focusOnElement(elementId) {
 function unfocusEverything() {
   document.activeElement.blur();
 }
+
+function forNumberOfTimes(num, callback) {
+  for (let i = 0; i < num; i++) {
+    callback(i);
+  }
+}
