@@ -6,8 +6,8 @@ const keyboardRun = {
   n: newGame,
   s: shuffleBoard,
   f: solveBoard,
-  h: () => { inputBoardSizeX.focus(); },
-  w: () => { inputBoardSizeY.focus(); },
+  h: () => { focusOnElement('inputBoardSizeX'); },
+  w: () => { focusOnElement('inputBoardSizeY'); },
   arrowleft: () => { keyboardPressArrowKey('left'); },
   arrowup: () => { keyboardPressArrowKey('up'); },
   arrowright: () => { keyboardPressArrowKey('right'); },
@@ -27,7 +27,7 @@ function keyboardPressEnter() {
 
   if (focusElement == 'inputBoardSizeX' || focusElement == 'inputBoardSizeY') {
     newGame();
-    document.activeElement.blur();
+    unfocusEverything();
   }
 }
 

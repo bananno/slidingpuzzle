@@ -20,3 +20,11 @@ function resetMoveCount() {
 function selectCell(num) {
   return document.getElementById('cell_' + num);
 }
+
+function focusOnElement(elementId) {
+  document.getElementById(elementId).focus();
+}
+
+function unfocusEverything() {
+  document.activeElement.blur();
+}
