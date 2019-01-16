@@ -31,6 +31,8 @@ function keyboardPressEnter() {
 
 function keyboardPressArrowKey(condition, changeX, changeY) {
   if (condition) {
-    swapTiles(emptySpace.x + changeX, emptySpace.y + changeY);
+    let xVal = parseInt(emptySpace.x) + changeX;
+    let yVal = parseInt(emptySpace.y) + changeY;
+    swapTiles(xVal, yVal);
   }
 }
