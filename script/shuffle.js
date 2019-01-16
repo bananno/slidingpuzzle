@@ -7,11 +7,6 @@ function shuffleBoard() {
     let tileX = boardSize.x;
     let tileY = boardSize.y;
 
-    let tile1 = {
-      x: getRandomNumber(tileX),
-      y: getRandomNumber(tileY)
-    };
-
     if (direction) {
       tileX = getRandomNumber(tileX);
     } else {
